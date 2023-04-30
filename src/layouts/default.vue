@@ -10,8 +10,6 @@
   </a-layout>
 </template>
 
-<script setup></script>
-
 <style lang="scss">
 .default-layout {
   height: 100vh;
