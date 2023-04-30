@@ -12,6 +12,13 @@ export default defineNuxtConfig({
     },
   },
 
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
+
   vite: {
     css: {
       preprocessorOptions: {
@@ -24,16 +31,10 @@ export default defineNuxtConfig({
 
   css: ["normalize.css", "@/assets/styles/main.scss"],
 
-  modules: ["@element-plus/nuxt", "@pinia/nuxt"],
+  modules: ["@pinia/nuxt"],
 
   pinia: {
     autoImports: ["defineStore", "acceptHMRUpdate"],
-  },
-
-  elementPlus: {
-    icon: "ElIcon",
-    importStyle: "scss",
-    themes: [],
   },
 
   runtimeConfig: {

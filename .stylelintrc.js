@@ -27,6 +27,13 @@ module.exports = {
     "color-hex-length": "long",
     "selector-class-pattern": /\w+/,
     "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": [
+      true,
+      {
+        ignoreAtRules: ["tailwind"],
+      },
+    ],
     "selector-id-pattern": null,
+    "no-invalid-position-at-import-rule": null,
   },
 }

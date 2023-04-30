@@ -1,9 +1,11 @@
 <template>
-  <div>Secret Page</div>
+  <div class="login-page">
+    111
+  </div>
 </template>
 
 <script setup>
 definePageMeta({
-  middleware: ["auth"],
+  layout: "empty",
 })
 </script>

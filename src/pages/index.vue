@@ -1,23 +1,5 @@
 <template>
-  <div>
-    <AppHelloWorld />
-
-    <!-- example fetch -->
-    <div>{{ pending ? "loading" : data }}</div>
-
-    <!-- example composables -->
-    <div>counter {{ counter }}</div>
-    <el-button @click="upCounter">
-      up counter composables
-    </el-button>
-
-    <!-- example pinia stores -->
-    <div>{{ name }} {{ count }}</div>
-    <div>double counter {{ doubleCount }}</div>
-    <el-button @click="upCounterStore">
-      up counter store
-    </el-button>
-  </div>
+  <div>Главная страница</div>
 </template>
 
 <script setup>
@@ -31,6 +13,7 @@ const { pending, data } = await useLazyAsyncData(() => {
 
 // example composables
 const counter = useAppCounter()
+
 function upCounter() {
   return (counter.value += 1)
 }
