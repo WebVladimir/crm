@@ -1,42 +1,100 @@
-# Nuxt 3 Minimal Starter
+# Nuxt 3 - Boilerplate
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+---
 
-## Setup
-
-Make sure to install the dependencies:
+## npm clean install a project
 
 ```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install
+npm ci
 ```
 
-## Development Server
+## npm install a package
 
-Start the development server on `http://localhost:3000`
+```bash
+npm install
+```
+
+## npm run a security audit
+
+```bash
+npm audit [fix]
+```
+
+## npm check for outdated packages
+
+```bash
+npm outdate [--all]
+```
+
+## npm update packages
+
+```bash
+npm update
+```
+
+## npm update with npm-check-updates
+
+```bash
+npm install -g npm-check-updates
+```
+
+## npm check update
+
+```bash
+ncu
+```
+
+## npm upgrade
+
+```bash
+ncu --upgrade
+```
+
+## npm upgrade interactive
+
+```bash
+ncu --interactive
+# or
+ncu --interactive --format group
+```
+
+## node version manager
+
+- https://volta.sh/
+
+## volta set or install version node
+
+```bash
+volta install node@18.14.0
+# or
+volta install node@18
+# or latest
+volta install node
+```
+
+## volta pin project
+
+```bash
+volta pin node@18.14.0
+# or
+volta pin node@18
+```
+
+## development server
 
 ```bash
 npm run dev
 ```
 
-## Production
-
-Build the application for production:
+## production
 
 ```bash
 npm run build
+npm run generate
 ```
 
-Locally preview production build:
+## locally preview production build:
 
 ```bash
 npm run preview
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

@@ -1,0 +1,25 @@
+@import "variables";
+
+@mixin sm-min {
+  @media screen and (min-width: #{$viewport-width-sm}) {
+    @content;
+  }
+}
+
+@mixin md-min {
+  @media screen and (min-width: #{$viewport-width-md}) {
+    @content;
+  }
+}
+
+@mixin lg-min {
+  @media screen and (min-width: #{$viewport-width-lg}) {
+    @content;
+  }
+}
+
+@mixin xl-min {
+  @media screen and (min-width: #{$viewport-width-xl}) {
+    @content;
+  }
+}
