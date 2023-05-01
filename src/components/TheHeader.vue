@@ -1,6 +1,10 @@
 <template>
   <a-layout-header class="the-header">
-    <app-burger />
+    <div class="the-header__block">
+      <app-burger />
+      <app-date class="ml-[30px]" />
+    </div>
+    <div class="the-header__block" />
   </a-layout-header>
 </template>
 
@@ -13,5 +17,10 @@
   justify-content: space-between;
   min-height: 70px;
   padding: 0 20px;
+}
+
+.the-header__block {
+  display: flex;
+  align-items: center;
 }
 </style>
