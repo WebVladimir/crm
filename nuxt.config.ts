@@ -1,3 +1,6 @@
+import { AntDesignVueResolver } from "unplugin-vue-components/resolvers"
+import Components from "unplugin-vue-components/vite"
+
 export default defineNuxtConfig({
   telemetry: false,
   srcDir: "src/",
@@ -20,6 +23,14 @@ export default defineNuxtConfig({
   },
 
   vite: {
+    plugins: [
+      Components({
+        resolvers: [AntDesignVueResolver({ resolveIcons: true })],
+      }),
+    ],
+    ssr: {
+      noExternal: ["ant-design-vue", "@ant-design/icons-vue"],
+    },
     css: {
       preprocessorOptions: {
         scss: {
@@ -29,7 +40,11 @@ export default defineNuxtConfig({
     },
   },
 
-  css: ["normalize.css", "@/assets/styles/main.scss"],
+  css: [
+    "normalize.css",
+    "@/assets/styles/main.scss",
+    "ant-design-vue/dist/antd.css",
+  ],
 
   modules: ["@pinia/nuxt"],
 

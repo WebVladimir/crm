@@ -2,6 +2,7 @@
   <a-menu
     mode="vertical"
     theme="dark"
+    class="the-menu"
   >
     <router-link
       v-for="link in links"
@@ -45,6 +46,20 @@ const links = shallowRef([
 ])
 
 function setActiveClass(to) {
-  return { "ant-menu-item-selected": route.path === to }
+  return { "the-menu__item--active": route.path === to }
 }
 </script>
+
+<style lang="scss">
+.ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  color: rgb(255 255 255 / 65%);
+
+  background: none;
+}
+
+.ant-menu-item.rounded-s.the-menu__item--active.ant-menu-item-only-child {
+  color: #ffffff;
+
+  background: #1890ff;
+}
+</style>
