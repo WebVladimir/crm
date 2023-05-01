@@ -4,7 +4,9 @@
       <app-burger />
       <app-date class="ml-[30px]" />
     </div>
-    <div class="flex items-center" />
+    <div class="flex items-center">
+      <app-user-info />
+    </div>
   </a-layout-header>
 </template>
 
