@@ -52,6 +52,8 @@
     "@ant-design/icons": "^5.0.1",
     "@ant-design/icons-vue": "^6.1.0",
     "@pinia/nuxt": "^0.4.7",
+    "@vuelidate/core": "^2.0.2",
+    "@vuelidate/validators": "^2.0.2",
     "ant-design-vue": "^3.2.20",
     "click-outside-vue3": "^4.0.1",
     "date-fns": "^2.29.3",

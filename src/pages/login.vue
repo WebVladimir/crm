@@ -4,43 +4,51 @@
       <div class="login-page__step">
         <div class="login-page__body">
           <p class="login-page__title text-2xl font-medium">
-            Домашняя ухгалтерия
+            Домашняя бухгалтерия
           </p>
 
           <a-form
-            :model="formState"
+            :model="formData"
             autocomplete="off"
             layout="vertical"
             class="login-page__form"
+            @submit.prevent="submitHandler"
           >
             <a-form-item
               label="Имя пользователя"
               name="username"
-              :rules="[
-                {
-                  required: true,
-                  message: 'Пожалуйста, введите имя пользователя',
-                },
-              ]"
+              :validate-status="v$.name.$errors.length ? 'error' : ''"
             >
               <a-input
-                v-model:value="formState.username"
+                v-model:value.trim="formData.name"
                 class="h-[40px]"
               />
+              <div
+                v-for="error in v$.name.$errors"
+                v-show="v$.name.$errors"
+                :key="error"
+              >
+                {{ error.$message }}
+              </div>
             </a-form-item>
 
             <a-form-item
               label="Пароль"
               name="password"
-              :rules="[
-                { required: true, message: 'Пожалуйста, введите пароль' },
-              ]"
+              :validate-status="v$.name.$errors.length ? 'error' : ''"
             >
               <a-input-password
-                v-model:value="formState.password"
+                v-model:value.trim="formData.password"
                 placeholder="Введите пароль"
                 class="h-[40px]"
               />
+              <div
+                v-for="error in v$.password.$errors"
+                v-show="v$.password.$errors"
+                :key="error"
+              >
+                {{ error.$message }}
+              </div>
             </a-form-item>
 
             <a-form-item>
@@ -59,7 +67,7 @@
           <div class="login-page__footer-text">
             Нет аккаунта ?
             <router-link
-              to=""
+              to="/register"
               class="login-page__link"
             >
               Зарегистрироваться
@@ -72,14 +80,43 @@
 </template>
 
 <script setup>
+import { useVuelidate } from "@vuelidate/core"
+import { minLength, required } from "@vuelidate/validators"
+
+const router = useRouter()
+
 definePageMeta({
   layout: "empty",
 })
 
-const formState = ref({
-  login: null,
+const formData = ref({
+  name: null,
   password: null,
 })
+
+const validations = computed(() => {
+  return {
+    name: {
+      required,
+      minLength: minLength(6),
+    },
+    password: {
+      required,
+      minLength: minLength(6),
+    },
+  }
+})
+
+const v$ = useVuelidate(validations, formData)
+
+function submitHandler() {
+  if (v$.value.$invalid) {
+    v$.value.$touch()
+    return
+  }
+
+  router.push("/")
+}
 </script>
 
 <style lang="scss">

@@ -45,7 +45,7 @@
     </template>
   </a-dropdown>
 </template>
-<script setup lang="ts"></script>
+<script setup></script>
 
 <style lang="scss">
 .app-user-info__menu-item {
