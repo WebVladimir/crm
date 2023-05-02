@@ -81,7 +81,7 @@
 
 <script setup>
 import { useVuelidate } from "@vuelidate/core"
-import { minLength, required } from "@vuelidate/validators"
+import { helpers, minLength, required } from "@vuelidate/validators"
 
 const router = useRouter()
 
@@ -97,12 +97,20 @@ const formData = ref({
 const validations = computed(() => {
   return {
     name: {
-      required,
-      minLength: minLength(6),
+      required: helpers.withMessage("Введите имя пользователя", required),
+      minLength: helpers.withMessage(
+        ({ $params, $model }) =>
+          `Введите не менее ${$params.min} символов. Cейчас ${$model.length}`,
+        minLength(6)
+      ),
     },
     password: {
-      required,
-      minLength: minLength(6),
+      required: helpers.withMessage("Введите имя пользователя", required),
+      minLength: helpers.withMessage(
+        ({ $params, $model }) =>
+          `Введите не менее ${$params.min} символов. Cейчас ${$model.length}`,
+        minLength(6)
+      ),
     },
   }
 })
@@ -110,6 +118,7 @@ const validations = computed(() => {
 const v$ = useVuelidate(validations, formData)
 
 function submitHandler() {
+  console.log()
   if (v$.value.$invalid) {
     v$.value.$touch()
     return
