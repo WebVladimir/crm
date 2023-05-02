@@ -16,7 +16,7 @@
           >
             <a-form-item
               label="Имя пользователя"
-              name="username"
+              name="name"
               :validate-status="v$.name.$errors.length ? 'error' : ''"
             >
               <a-input
@@ -27,6 +27,7 @@
                 v-for="error in v$.name.$errors"
                 v-show="v$.name.$errors"
                 :key="error"
+                class="text-red-700"
               >
                 {{ error.$message }}
               </div>
@@ -46,6 +47,7 @@
                 v-for="error in v$.password.$errors"
                 v-show="v$.password.$errors"
                 :key="error"
+                class="text-red-700"
               >
                 {{ error.$message }}
               </div>
@@ -105,7 +107,7 @@ const validations = computed(() => {
       ),
     },
     password: {
-      required: helpers.withMessage("Введите имя пользователя", required),
+      required: helpers.withMessage("Введите пароль", required),
       minLength: helpers.withMessage(
         ({ $params, $model }) =>
           `Введите не менее ${$params.min} символов. Cейчас ${$model.length}`,
@@ -118,7 +120,6 @@ const validations = computed(() => {
 const v$ = useVuelidate(validations, formData)
 
 function submitHandler() {
-  console.log()
   if (v$.value.$invalid) {
     v$.value.$touch()
     return
