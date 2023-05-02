@@ -98,6 +98,7 @@
 
 <script setup>
 import { useVuelidate } from "@vuelidate/core"
+import { isTrue } from "~/composables/useCustomValidators"
 import { helpers, minLength, required } from "@vuelidate/validators"
 
 const router = useRouter()
@@ -111,10 +112,6 @@ const formData = ref({
   password: null,
   isAgree: false,
 })
-
-const isTrue = (value) => {
-  return value
-}
 
 const validations = computed(() => {
   return {
