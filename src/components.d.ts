@@ -25,7 +25,6 @@ declare module "@vue/runtime-core" {
     AMenu: typeof import("ant-design-vue/es")["Menu"]
     AMenuDivider: typeof import("ant-design-vue/es")["MenuDivider"]
     AMenuItem: typeof import("ant-design-vue/es")["MenuItem"]
-    ArrowRightOutlined: typeof import("@ant-design/icons-vue")["ArrowRightOutlined"]
     DownOutlined: typeof import("@ant-design/icons-vue")["DownOutlined"]
     PlusOutlined: typeof import("@ant-design/icons-vue")["PlusOutlined"]
     RouterLink: typeof import("vue-router")["RouterLink"]

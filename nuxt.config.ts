@@ -7,6 +7,7 @@ export default defineNuxtConfig({
   imports: {
     dirs: ["stores", "tools", "adapters"],
   },
+  components: ["~/components/App", "~/components/The", "~/components"],
 
   app: {
     head: {
@@ -56,8 +57,7 @@ export default defineNuxtConfig({
     apiSecret: process.env.NUXT_API_SECRET || "api_secret_token",
     public: {
       apiBaseURL:
-        process.env.NUXT_PUBLIC_API_BASE_URL ||
-        "https://jsonplaceholder.typicode.com",
+        process.env.NUXT_PUBLIC_API_BASE_URL || "http://localhost:3000",
     },
   },
 })
