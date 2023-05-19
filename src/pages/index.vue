@@ -14,10 +14,6 @@ const { pending, data } = await useLazyAsyncData(() => {
 // example composables
 const counter = useAppCounter()
 
-function upCounter() {
-  return (counter.value += 1)
-}
-
 // example pinia stores
 const store = useStoreCounter()
 const { increment: upCounterStore } = store
