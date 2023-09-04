@@ -60,6 +60,7 @@
     "click-outside-vue3": "^4.0.1",
     "consola": "^3.1.0",
     "date-fns": "^2.29.3",
+    "defu": "^6.1.2",
     "formvuelate": "^3.9.1",
     "lodash": "^4.17.21",
     "normalize.css": "^8.0.1",
